@@ -12,3 +12,8 @@ input, textarea {
 .submit-btn {
   align-self: flex-start;
 }
+
+#actions {
+  display: flex;
+  flex-direction: column;
+}

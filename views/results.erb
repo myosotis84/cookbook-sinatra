@@ -1,0 +1,21 @@
+<% unless @results.nil? %>
+  <% if @results.empty? %>
+    <p>No matches found</p>
+  <% else %>
+    <h1>Search results</h1>
+    <p>Here are the first 5 results for "<%= @ingredient.capitalize %>":</p>
+    <ol>
+      <% @results.each_with_index do |recipe, recipe_index| %>
+        <li><%= recipe[0] %> (<%= recipe[2] %> - <%= recipe[3] %>)
+          <form action="/search/import/<%= recipe[0] %>" method="post">
+            <input type="hidden" id="recipe_name" name="recipe_name" value="<%= recipe[0] %>">
+            <input type="hidden" id="recipe_description" name="recipe_description" value="<%= recipe[1] %>">
+            <input type="hidden" id="recipe_prep_time" name="recipe_prep_time" value="<%= recipe[2] %>">
+            <input type="hidden" id="recipe_difficulty" name="recipe_difficulty" value="<%= recipe[3] %>">
+            <button type="submit" class="submit-btn">Import</button>
+          </form>
+        </li>
+      <% end %>
+    </ol>
+  <% end %>
+<% end %>

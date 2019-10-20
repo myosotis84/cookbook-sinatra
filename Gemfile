@@ -1,6 +1,6 @@
 source "https://rubygems.org"
-
 gem "sinatra"
+gem "nokogiri"
 gem "sinatra-contrib"
 gem "pry-byebug"
 gem "better_errors"
