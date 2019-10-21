@@ -47,3 +47,11 @@ post '/search/import/:recipe_name' do
   cookbook.add_recipe(recipe)
   redirect to '/'
 end
+
+get '/recipes/:index/done' do
+  cookbook = Cookbook.new("recipes.csv")
+  recipe = cookbook.find(params[:index].to_i)
+  recipe.mark_as_done!
+  cookbook.save
+  redirect to '/'
+end

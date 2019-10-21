@@ -17,3 +17,7 @@ input, textarea {
   display: flex;
   flex-direction: column;
 }
+
+li {
+  list-style: none;
+}
